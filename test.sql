@@ -1,0 +1,1 @@
+SELECT * FROM labuser6849602_catalog.dawd_v2.customers
