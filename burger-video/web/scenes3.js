@@ -169,7 +169,7 @@ SCENES.global = (root, T) => {
   // restaurant dots, ordered by distance from the US so they ripple outward
   const rnd = seeded(23), dots = [], US = [-98, 39];
   WORLD.forEach(c => {
-    if (c.name === 'Antarctica') return;
+    if (c.name === 'Antarctica' || c.name.startsWith('Fr. S.')) return;
     const ring = largestRing(c), b = bbox(ring), n = clamp(Math.round(Math.sqrt((b[2] - b[0]) * (b[3] - b[1])) / 9), 1, 7);
     landPoints(c, ring, n, rnd).forEach(p => dots.push({ p, d: Math.hypot((p[0] - US[0]) * .8, p[1] - US[1]) }));
   });

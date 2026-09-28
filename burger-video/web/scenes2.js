@@ -40,7 +40,7 @@ SCENES.claims = (root, T) => {
   });
   const pins = claims.map(c => { const [x, y] = MAP.proj(...c.ll); return { x, y, el: h('div', { class: 'a', html: pinSVG(46), style: 'transform-origin:50% 100%' }, root), ring: h('div', { class: 'a', style: 'width:90px;height:90px;border-radius:50%;border:5px solid #D6402D' }, root) }; });
   const dim = h('div', { class: 'fill', style: 'background:rgba(10,50,50,.72)' }, root);
-  const stamp = put(root, '<div style="border:16px solid #D6402D;padding:14px 40px;border-radius:14px;transform:rotate(-9deg);background:#F4EBD8">NO<br>RECEIPTS</div>', 960, 330, 900, `font-size:170px;color:#D6402D;text-align:center;text-shadow:6px 7px 0 rgba(0,0,0,.3);background:none`, 'a big');
+  const stamp = put(root, '<div style="display:inline-block;border:16px solid #D6402D;padding:14px 40px;border-radius:14px;transform:rotate(-9deg);background:#F4EBD8">NO<br>RECEIPTS</div>', 960, 330, 1400, `font-size:170px;color:#D6402D;text-align:center;text-shadow:6px 7px 0 rgba(0,0,0,.3);background:none`, 'a big');
 
   return t => {
     tf(q, { y: 120 + 20 * Math.sin(t), o: 1 });
