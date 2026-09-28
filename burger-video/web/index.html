@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>burger</title>
+<style>
+@import url("../assets/fonts/fonts.css");
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+#stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #111; font-family: 'Inter', sans-serif; color: #1d1a17; }
+.scene { position: absolute; inset: 0; display: none; overflow: hidden; }
+.a { position: absolute; will-change: transform; }
+.fill { position: absolute; inset: 0; }
+.cut { filter: drop-shadow(9px 11px 0 rgba(0,0,0,.28)); }
+.cut-s { filter: drop-shadow(5px 6px 0 rgba(0,0,0,.28)); }
+.big { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; line-height: .92; letter-spacing: -.01em; }
+.serif { font-family: 'DM Serif Display', serif; }
+.hand { font-family: 'Caveat', cursive; font-weight: 600; }
+.chip { display: inline-block; background: #1d1a17; color: #F4EBD8; font: 800 30px 'Inter'; letter-spacing: .14em; text-transform: uppercase; padding: 14px 26px; border-radius: 6px; white-space: nowrap; box-shadow: 6px 7px 0 rgba(0,0,0,.25); }
+.chip.light { background: #F4EBD8; color: #1d1a17; }
+.chip.red { background: #D6402D; color: #fff; }
+.chip.gold { background: #F2B632; color: #1d1a17; }
+.dots { background-image: radial-gradient(circle, rgba(0,0,0,.16) 3px, transparent 3.5px); background-size: 26px 26px; }
+.dots-w { background-image: radial-gradient(circle, rgba(255,255,255,.12) 3px, transparent 3.5px); background-size: 26px 26px; }
+/* global film / paper treatment */
+#grain { position: absolute; inset: -200px; background: url(../assets/grain.png); mix-blend-mode: overlay; opacity: .55; pointer-events: none; }
+#vig { position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.42) 100%); pointer-events: none; }
+#fade { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
+/* footage layer (real clips slot in here, see footage/README.md) */
+#footage { position: absolute; inset: 0; display: none; pointer-events: none; }
+#footage .clip { position: absolute; background-size: cover; background-position: center; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="scenes"></div>
+  <div id="footage"></div>
+  <div id="vig"></div>
+  <div id="grain"></div>
+  <div id="fade"></div>
+</div>
+<script src="../assets/world.js"></script>
+<script src="../build/timeline.js"></script>
+<script src="../footage/manifest.js"></script>
+<script src="lib.js"></script>
+<script src="art.js"></script>
+<script src="scenes1.js"></script>
+<script src="scenes2.js"></script>
+<script src="scenes3.js"></script>
+<script src="scenes4.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
